@@ -1,5 +1,7 @@
 package com.dennismoviedb.moviedb;
 
+import android.util.Log;
+
 import okhttp3.Call;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
