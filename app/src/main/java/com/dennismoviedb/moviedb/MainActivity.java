@@ -37,14 +37,9 @@ public class MainActivity extends Activity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
-                    if (response.isSuccessful()){
-                        Log.v(TAG, jsonData);
-                        myMovies = movieDBService.processResults(response);
-                    }
-                }catch (IOException e){
-                  e.printStackTrace();
+
+                if (response.isSuccessful()){
+                    myMovies = movieDBService.processResults(response);
                 }
             }
         });

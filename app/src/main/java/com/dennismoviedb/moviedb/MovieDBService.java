@@ -42,7 +42,6 @@ public class MovieDBService {
         call.enqueue(callback);
 
     }
-
     //Now lets create a method to fetch the data from the JSON file
     public ArrayList<Movie> processResults(Response response){
         ArrayList<Movie> movies = new ArrayList<>();
