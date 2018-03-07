@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -13,6 +14,8 @@ import okhttp3.Response;
 
 public class MainActivity extends Activity {
     public static final String TAG = MainActivity.class.getSimpleName();
+    //This will be used get the data gathered from the arrayList
+    public ArrayList<Movie> myMovies = new ArrayList<>();
 
     //This is where the main program runs
     @Override
@@ -34,8 +37,12 @@ public class MainActivity extends Activity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                String jsonData = response.body().toString();
-                Log.v(TAG, jsonData);
+                if (response.isSuccessful()){
+                    String jsonData = response.body().string();
+                    Log.v(TAG, jsonData);
+                    movieDBService.processResults(response);
+                }
+
             }
         });
     }

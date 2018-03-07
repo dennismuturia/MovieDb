@@ -10,16 +10,15 @@ public class Movie {
     private int movie_vote;
     private String movie_backdropImage;
     private String movie_overview;
-    private int movie_genre;
 
     public Movie(String movie_title, String movie_poster, int movie_vote,
-                 String movie_backdropImage, String movie_overview, int movie_genre){
+                 String movie_backdropImage, String movie_overview){
         this.movie_title = movie_title;
         this.movie_poster = movie_poster;
         this.movie_vote = movie_vote;
         this.movie_backdropImage = movie_backdropImage;
         this.movie_overview = movie_overview;
-        this.movie_genre = movie_genre;
+
     }
 
     public String getMovie_title() {
@@ -38,11 +37,6 @@ public class Movie {
         return movie_backdropImage;
     }
 
-    public void getMovie_overview() {
-        this.movie_overview = movie_overview;
-    }
+    public String getMovie_overview() {return movie_overview;}
 
-    public int getMovie_genre() {
-        return movie_genre;
-    }
 }
