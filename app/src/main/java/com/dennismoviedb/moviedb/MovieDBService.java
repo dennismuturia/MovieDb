@@ -1,7 +1,5 @@
 package com.dennismoviedb.moviedb;
 
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,6 +39,28 @@ public class MovieDBService {
         Call call = client.newCall(request);
         call.enqueue(callback);
 
+    }
+    //Now lets get the latest movie
+    public ArrayList<NowShowingMovie> latestMovieProcess(Response response){
+        ArrayList<NowShowingMovie> latestMovie = new ArrayList<>();
+        try{
+            String latestData = response.body().string();
+            if (response.isSuccessful()){
+                JSONObject myObjectNow = new JSONObject(latestData);
+                String movie_title = myObjectNow.getString("title");
+                String movie_poster = myObjectNow.getString("poster_path");
+
+
+                NowShowingMovie nowShowingMovie = new NowShowingMovie(movie_title, movie_poster);
+
+                latestMovie.add(nowShowingMovie);
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+        return latestMovie;
     }
     //Now lets create a method to fetch the data from the JSON file
     public ArrayList<Movie> processResults(Response response){

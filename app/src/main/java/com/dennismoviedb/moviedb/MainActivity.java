@@ -13,9 +13,10 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class MainActivity extends Activity {
-    public static final String TAG = MainActivity.class.getSimpleName();
+    public static final String TAG = MainActivity.class.getSimpleName();// This is useful for logging
     //This will be used get the data gathered from the arrayList
     public ArrayList<Movie> myMovies = new ArrayList<>();
+    public ArrayList<NowShowingMovie> latestMovie = new ArrayList<>();
 
     //This is where the main program runs
     @Override

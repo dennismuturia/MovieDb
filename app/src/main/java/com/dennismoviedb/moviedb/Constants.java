@@ -10,4 +10,7 @@ public class Constants {
     public static final String Api = "api_key";
     public static final String searchQuery = "search";
     public static final String baseTvURL = "https://api.themoviedb.org/3/tv/";
+    public static final String nowShowingUrl = " https://api.themoviedb.org/3/movie/now_playing";
+    public static final String youTubeUrl = "";
+    public static final String youtubeAPI = BuildConfig.YouTubeAPI;
 }

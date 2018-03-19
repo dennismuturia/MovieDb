@@ -17,6 +17,7 @@ android {
         }
         debug{
             buildConfigField "String", "MovieAPI", movieApi
+            buildConfigField "String", "YouTubeAPI", youtubeApi
         }
 
     }
