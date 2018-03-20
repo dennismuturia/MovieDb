@@ -1,4 +1,4 @@
-package com.dennismoviedb.moviedb;
+package com.dennismoviedb.moviedb.model;
 
 /**
  * Created by dennis on 3/9/18.

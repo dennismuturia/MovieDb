@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dennismoviedb.moviedb.MainActivity">
+    tools:context="com.dennismoviedb.moviedb.ui.MainActivity">
 
     <RelativeLayout
         android:id="@+id/theMovie"
@@ -18,6 +18,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView"/>
 
     </RelativeLayout>
 

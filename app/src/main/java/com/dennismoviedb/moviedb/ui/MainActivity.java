@@ -1,9 +1,12 @@
-package com.dennismoviedb.moviedb;
+package com.dennismoviedb.moviedb.ui;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+
+import com.dennismoviedb.moviedb.R;
+import com.dennismoviedb.moviedb.model.Movie;
+import com.dennismoviedb.moviedb.model.NowShowingMovie;
+import com.dennismoviedb.moviedb.services.MovieDBService;
 
 import java.io.IOException;
 import java.util.ArrayList;

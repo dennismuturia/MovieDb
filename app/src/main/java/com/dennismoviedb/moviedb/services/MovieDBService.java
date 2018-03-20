@@ -1,4 +1,8 @@
-package com.dennismoviedb.moviedb;
+package com.dennismoviedb.moviedb.services;
+
+import com.dennismoviedb.moviedb.Constants;
+import com.dennismoviedb.moviedb.model.NowShowingMovie;
+import com.dennismoviedb.moviedb.model.Movie;
 
 import org.json.JSONArray;
 import org.json.JSONException;
