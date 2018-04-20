@@ -45,7 +45,10 @@ public class MovieDBService {
 
     }
     //Now lets get the latest movie
+    /*
+    * Commented out this section for use later.
     public ArrayList<NowShowingMovie> latestMovieProcess(Response response){
+
         ArrayList<NowShowingMovie> latestMovie = new ArrayList<>();
         try{
             String latestData = response.body().string();
@@ -66,8 +69,10 @@ public class MovieDBService {
         }
         return latestMovie;
     }
+    */
     //Now lets create a method to fetch the data from the JSON file
     public ArrayList<Movie> processResults(Response response){
+        String imageUrl = Constants.imageURL;
         ArrayList<Movie> movies = new ArrayList<>();
         try {
             String jsonData = response.body().string();
@@ -77,10 +82,12 @@ public class MovieDBService {
                 for (int i = 0; i < resultsJSON.length(); i++){
                     JSONObject theMoviesJson = resultsJSON.getJSONObject(i);
                     String movie_title = theMoviesJson.getString("title");
-                    String movie_poster = theMoviesJson.getString("poster_path");
+                    String movie_poster = imageUrl + theMoviesJson.getString("poster_path");
                     int movie_vote = theMoviesJson.getInt("vote_average");
                     String movie_backdropImage = theMoviesJson.getString("backdrop_path");
                     String movie_overview = theMoviesJson.getString("overview");
+
+
 
                     //Initiate the movie object
                     Movie movie = new Movie(movie_title, movie_poster,movie_vote,

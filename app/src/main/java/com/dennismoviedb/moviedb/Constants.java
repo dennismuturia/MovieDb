@@ -13,4 +13,5 @@ public class Constants {
     public static final String nowShowingUrl = " https://api.themoviedb.org/3/movie/now_playing";
     public static final String youTubeUrl = "";
     public static final String youtubeAPI = BuildConfig.YouTubeAPI;
+    public static final String imageURL = "http://image.tmdb.org/t/p/w500/";
 }
