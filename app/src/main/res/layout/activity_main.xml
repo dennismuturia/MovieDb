@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dennismoviedb.moviedb.ui.MainActivity">
-
+    tools:context="com.dennismoviedb.moviedb.ui.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <RelativeLayout
         android:id="@+id/theMovie"
@@ -14,7 +14,7 @@
         android:layout_centerInParent="true"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

@@ -2,6 +2,8 @@ package com.dennismoviedb.moviedb.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -10,6 +12,7 @@ import com.dennismoviedb.moviedb.adapters.MovieListAdapter;
 import com.dennismoviedb.moviedb.model.Movie;
 import com.dennismoviedb.moviedb.model.NowShowingMovie;
 import com.dennismoviedb.moviedb.services.MovieDBService;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,6 +24,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class MainActivity extends Activity{
+
+
 
     public static final String TAG = MainActivity.class.getSimpleName();// This is useful for logging
     @BindView(R.id.recyclerView)RecyclerView mRecyclerView;
@@ -41,7 +46,10 @@ public class MainActivity extends Activity{
         //Now lets call the method to get the movies
         ButterKnife.bind(this);
         getMovies();
+
     }
+
+
     //This method will utilizes the MovieService and gets the Api calls
     public void getMovies(){
         final MovieDBService movieDBService = new MovieDBService();
