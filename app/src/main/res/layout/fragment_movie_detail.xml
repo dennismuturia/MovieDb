@@ -5,9 +5,139 @@
     tools:context="com.dennismoviedb.moviedb.ui.MovieDetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/movieImageBackView"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/movieImageFrontView"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="46dp"
+                android:scaleType="centerCrop"></ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/movieNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="43dp"
+                android:layout_toEndOf="@+id/genreTextView"
+                android:text="Restaurant Name"
+                android:textColor="@color/navigationBarColor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ratingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/movieNameTextView"
+                android:text="4.5/5"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="American"
+                android:id="@+id/genreTextView"
+                android:layout_below="@+id/movieNameTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/Blue"
+                android:textStyle="italic" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/saveMovieButton"
+                android:paddingLeft="30dp"
+                android:paddingTop="20dp"
+                android:paddingRight="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save the movie"
+                    android:id="@+id/websiteTextView"
+                    android:drawableLeft="@drawable/ic_save"
+                    android:drawablePadding="4dp"
+                    android:textColor="@color/navigationBarColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Watch Preview"
+                    android:id="@+id/phoneTextView"
+                    android:drawableLeft="@drawable/ic_watch_preview"
+                    android:drawablePadding="4dp"
+                    android:textColor="@color/navigationBarColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Watch movie online"
+                    android:drawableLeft="@drawable/ic_view_movie"
+                    android:drawablePadding="4dp"
+                    android:id="@+id/addressTextView"
+                    android:textColor="@color/navigationBarColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Movie"
+                android:id="@+id/saveMovieButton"
+                android:layout_alignParentBottom="true"
+                android:background="@color/limegreen"
+                android:textColor="@color/navigationBarColor"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
 
 </FrameLayout>
