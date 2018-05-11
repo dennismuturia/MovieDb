@@ -1,6 +1,7 @@
 package com.dennismoviedb.moviedb.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.TextView;
 
 import com.dennismoviedb.moviedb.R;
 import com.dennismoviedb.moviedb.model.Movie;
+import com.dennismoviedb.moviedb.ui.MovieDetailActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -49,7 +53,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         return mMovie.size();
     }
 
-    public class MovieViewHolder extends RecyclerView.ViewHolder{
+    public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.myImage) ImageView PosterImage;
         @BindView(R.id.mainText) TextView Title;
         //@BindView(R.id.overview)TextView Overview;
@@ -66,6 +70,15 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             Title.setText(movie.getMovie_title());
             //Overview.setText(movie.getMovie_overview());
             Picasso.with(mContext).load(movie.getMovie_poster()).resize(MAX_WIDTH,MAX_HEIGHT).centerCrop().into(PosterImage);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int itemPOsition = getLayoutPosition();
+            Intent intent = new Intent(mContext, MovieDetailActivity.class);
+            intent.putExtra("position",itemPOsition);
+            intent.putExtra("movies", Parcels.wrap(mMovie));
+            mContext.startActivity(intent);
         }
     }
 }
