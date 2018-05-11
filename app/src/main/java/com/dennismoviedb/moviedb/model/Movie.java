@@ -1,9 +1,12 @@
 package com.dennismoviedb.moviedb.model;
 
+import org.parceler.Parcel;
+
 /**
  * Created by dennis on 3/6/18.
  */
 //This class will be used to hold our data
+@Parcel
 public class Movie {
     private String movie_title;
     private String movie_poster;
