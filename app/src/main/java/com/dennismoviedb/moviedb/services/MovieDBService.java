@@ -85,7 +85,7 @@ public class MovieDBService {
                     String movie_poster = imageUrl + theMoviesJson.getString("poster_path");
                     int movie_vote = theMoviesJson.getInt("vote_average");
                     //int movie_genre = theMoviesJson.getInt("genre_ids");
-                    String movie_backdropImage = theMoviesJson.getString("backdrop_path");
+                    String movie_backdropImage = imageUrl + theMoviesJson.getString("backdrop_path");
                     String movie_overview = theMoviesJson.getString("overview");
 
 
