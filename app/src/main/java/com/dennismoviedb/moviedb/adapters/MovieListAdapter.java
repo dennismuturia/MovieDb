@@ -71,7 +71,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             Title.setText(movie.getMovie_title());
             //Overview.setText(movie.getMovie_overview());
             Picasso.with(mContext).load(movie.getMovie_poster()).resize(MAX_WIDTH,MAX_HEIGHT).centerCrop().into(PosterImage);
-            Picasso.with(mContext).load(movie.getMovie_backdropImage());
+
         }
 
         @Override

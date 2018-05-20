@@ -30,6 +30,7 @@ public class MovieDetailFragment extends Fragment {
 @BindView(R.id.websiteTextView)TextView webView;
 @BindView(R.id.previewTextView)TextView watchPreview;
 @BindView(R.id.onlineTextView)TextView watchonline;
+@BindView(R.id.story)TextView movieStory;
 
 //Declare the new models class
     private Movie mMovie;
@@ -62,6 +63,7 @@ public class MovieDetailFragment extends Fragment {
         Picasso.with(view.getContext()).load(mMovie.getMovie_backdropImage()).into(movieBack);
         Picasso.with(view.getContext()).load(mMovie.getMovie_poster()).into(movieFront);
 
+        movieStory.setText(mMovie.getMovie_overview());
         movieName.setText(mMovie.getMovie_title());
         //ratings.setText(mMovie.getMovie_vote());
         genre.setText("Child Movie");
