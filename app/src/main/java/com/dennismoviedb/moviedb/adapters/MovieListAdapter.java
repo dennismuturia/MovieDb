@@ -64,12 +64,14 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
         }
 
         public void bindMovie(Movie movie){
             Title.setText(movie.getMovie_title());
             //Overview.setText(movie.getMovie_overview());
             Picasso.with(mContext).load(movie.getMovie_poster()).resize(MAX_WIDTH,MAX_HEIGHT).centerCrop().into(PosterImage);
+            Picasso.with(mContext).load(movie.getMovie_backdropImage());
         }
 
         @Override

@@ -14,6 +14,8 @@ public class Movie {
     private String movie_backdropImage;
     private String movie_overview;
 
+    public Movie(){}
+
     public Movie(String movie_title, String movie_poster, int movie_vote,
                  String movie_backdropImage, String movie_overview){
         this.movie_title = movie_title;

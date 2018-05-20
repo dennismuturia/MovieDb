@@ -63,7 +63,7 @@ public class MovieDetailFragment extends Fragment {
         Picasso.with(view.getContext()).load(mMovie.getMovie_poster()).into(movieFront);
 
         movieName.setText(mMovie.getMovie_title());
-        ratings.setText(mMovie.getMovie_vote());
+        //ratings.setText(mMovie.getMovie_vote());
         genre.setText("Child Movie");
 
         return view;
