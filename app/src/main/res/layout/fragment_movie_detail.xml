@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.dennismoviedb.moviedb.ui.MovieDetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -44,14 +45,13 @@
                 android:id="@+id/movieNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="43dp"
-                android:layout_toEndOf="@+id/genreTextView"
-                android:text="Restaurant Name"
+                android:layout_marginStart="113dp"
+                android:text="Movie Name"
                 android:textColor="@color/navigationBarColor"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/ratingTextView"
                 android:layout_width="wrap_content"
@@ -61,6 +61,8 @@
                 android:text="4.5/5"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
+
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,7 +85,6 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_above="@+id/saveMovieButton"
                 android:paddingLeft="30dp"
                 android:background="#fff"
                 android:paddingTop="20dp"
@@ -105,55 +106,9 @@
                     android:textColor="@color/navigationBarColor"
                     android:layout_marginBottom="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="View Web"
-                    android:id="@+id/websiteTextView"
-                    android:drawableLeft="@drawable/ic_save"
-                    android:drawablePadding="4dp"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Watch Preview"
-                    android:id="@+id/previewTextView"
-                    android:drawableLeft="@drawable/ic_watch_preview"
-                    android:drawablePadding="4dp"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Watch movie online"
-                    android:drawableLeft="@drawable/ic_view_movie"
-                    android:drawablePadding="4dp"
-                    android:id="@+id/onlineTextView"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"/>
 
             </LinearLayout>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Save Movie"
-                android:id="@+id/saveMovieButton"
-                android:layout_alignParentBottom="true"
-                android:background="@color/limegreen"
-                android:textColor="@color/navigationBarColor"
-                android:textSize="15sp" />
         </RelativeLayout>
     </LinearLayout>
 

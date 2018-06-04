@@ -13,17 +13,18 @@ public class Movie {
     private int movie_vote;
     private String movie_backdropImage;
     private String movie_overview;
+    private boolean adult;
 
     public Movie(){}
 
     public Movie(String movie_title, String movie_poster, int movie_vote,
-                 String movie_backdropImage, String movie_overview){
+                 String movie_backdropImage, String movie_overview, boolean adult){
         this.movie_title = movie_title;
         this.movie_poster = movie_poster;
         this.movie_vote = movie_vote;
         this.movie_backdropImage = movie_backdropImage;
         this.movie_overview = movie_overview;
-
+        this.adult = adult;
     }
 
     public String getMovie_title() {
@@ -44,4 +45,7 @@ public class Movie {
 
     public String getMovie_overview() {return movie_overview;}
 
+    public boolean isAdult() {
+        return adult;
+    }
 }

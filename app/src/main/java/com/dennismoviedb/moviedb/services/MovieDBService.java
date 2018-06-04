@@ -87,12 +87,13 @@ public class MovieDBService {
                     //int movie_genre = theMoviesJson.getInt("genre_ids");
                     String movie_backdropImage = imageUrl + theMoviesJson.getString("backdrop_path");
                     String movie_overview = theMoviesJson.getString("overview");
+                    boolean adults = theMoviesJson.getBoolean("adult");
 
 
 
                     //Initiate the movie object
                     Movie movie = new Movie(movie_title, movie_poster,movie_vote,
-                            movie_backdropImage,movie_overview);
+                            movie_backdropImage,movie_overview, adults);
 
                     //Add them to the model
                     movies.add(movie);

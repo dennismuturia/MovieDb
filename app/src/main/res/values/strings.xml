@@ -3,4 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Popular">Popular</string>
+    <string name="tv_shows">TV Shows</string>
+    <string name="people">Actors</string>
 </resources>

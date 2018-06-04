@@ -25,11 +25,7 @@ public class MovieDetailFragment extends Fragment {
 @BindView(R.id.movieImageFrontView)ImageView movieFront;
 @BindView(R.id.movieNameTextView)TextView movieName;
 @BindView(R.id.ratingTextView)TextView ratings;
-@BindView(R.id.saveMovieButton)Button savebutton;
 @BindView(R.id.genreTextView)TextView genre;
-@BindView(R.id.websiteTextView)TextView webView;
-@BindView(R.id.previewTextView)TextView watchPreview;
-@BindView(R.id.onlineTextView)TextView watchonline;
 @BindView(R.id.story)TextView movieStory;
 
 //Declare the new models class
@@ -65,8 +61,13 @@ public class MovieDetailFragment extends Fragment {
 
         movieStory.setText(mMovie.getMovie_overview());
         movieName.setText(mMovie.getMovie_title());
-        //ratings.setText(mMovie.getMovie_vote());
-        genre.setText("Child Movie");
+        ratings.setText("" + mMovie.getMovie_vote());
+        if (mMovie.isAdult() != false){
+            genre.setText("Adult");
+        }else {
+            genre.setText("Everyone");
+        }
+
 
         return view;
     }
