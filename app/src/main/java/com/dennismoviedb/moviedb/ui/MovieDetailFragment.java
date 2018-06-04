@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +19,7 @@ import org.parceler.Parcels;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MovieDetailFragment extends Fragment {
+public class MovieDetailFragment extends Fragment{
 @BindView(R.id.movieImageBackView)ImageView movieBack;
 @BindView(R.id.movieImageFrontView)ImageView movieFront;
 @BindView(R.id.movieNameTextView)TextView movieName;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/popularMOvies"
+        android:icon="@drawable/ic_cryEngine"
+        android:title="Popular Movies"/>
+
+    <item
+        android:id="@+id/newmovies"
+        android:icon="@drawable/ic_eye"
+        android:title="Albums"/>
+
+    <item
+        android:id="@+id/tvshows"
+        android:icon="@drawable/ic_cool"
+        android:title="Tv Shows"/>
+</menu>
