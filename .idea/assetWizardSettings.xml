@@ -34,8 +34,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="$PROJECT_DIR$/../../Youtube Api/Icons MOvie/emoticon-cool.png" />
-                                      <entry key="outputName" value="ic_cool" />
+                                      <entry key="imageAsset" value="$PROJECT_DIR$/../../Youtube Api/Icons MOvie/cryengine.png" />
+                                      <entry key="outputName" value="ic_cry_engine" />
                                     </map>
                                   </option>
                                 </PersistentState>

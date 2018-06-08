@@ -20,9 +20,14 @@
         </activity>
         <activity
             android:name=".ui.MovieDetailActivity"
-            android:theme="@style/Base.Theme.AppCompat">
-        </activity>
-        <activity android:name=".ui.ListOfResults">
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".ui.ListOfResults" />
+        <activity android:name=".ui.Login_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

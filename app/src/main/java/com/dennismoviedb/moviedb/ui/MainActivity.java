@@ -1,5 +1,6 @@
 package com.dennismoviedb.moviedb.ui;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ public class MainActivity extends Activity{
     //This will be used get the data gathered from the arrayList
     public ArrayList<Movie> myMovies = new ArrayList<>();
     private GridLayoutManager gridLayoutManager;
+    private ActionBar toolbar;
     /*
     *We will be using this functionality later in the course
     *  public ArrayList<NowShowingMovie> latestMovie = new ArrayList<>();
@@ -48,9 +50,11 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Setting the navigationbar
         //Now lets call the method to get the movies
         ButterKnife.bind(this);
         getMovies();
+
 
     }
 
@@ -84,32 +88,6 @@ public class MainActivity extends Activity{
             }
         });
     }
-    /*
+    //This is where we will be implementing the login to the application
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.searchmenu, menu);
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        MenuItem menuItem = menu.findItem(R.id.searchMovieandTV);
-        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                String User = query;
-                Intent intent = new Intent(MainActivity.this, ListOfResults.class);
-                intent.putExtra("User", User);
-                startActivity(intent);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
-        return  super.onCreateOptionsMenu(menu);
-    }
-
-*/
 }
