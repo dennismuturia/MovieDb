@@ -2,13 +2,11 @@ package com.dennismoviedb.moviedb.ui;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,6 +25,10 @@ import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
+//Facebook imports
+import com.facebook.AccessToken;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 public class MainActivity extends Activity{
 
@@ -55,10 +57,15 @@ public class MainActivity extends Activity{
         ButterKnife.bind(this);
         getMovies();
 
-
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
     }
-
-
+    /*
+    public void logSentFriendRequestEvent () {
+        AppEventsLogger logger = AppEventsLogger.newLogger(this);
+        logger.logEvent("sentFriendRequest");
+    }
+    */
     //This method will utilizes the MovieService and gets the Api calls
     public void getMovies(){
         final MovieDBService movieDBService = new MovieDBService();
@@ -88,6 +95,30 @@ public class MainActivity extends Activity{
             }
         });
     }
-    //This is where we will be implementing the login to the application
-
+    //For the menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.popularMOvies:
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
+                /*
+            case R.id.newmovies:
+                startActivity(new Intent(this, NewMovies.class));
+                return true;
+            case R.id.tvshows:
+                startActivity(new Intent(this, TVShows.class));
+                return true;
+                */
+            case R.id.searchMovieandTV:
+                startActivity(new Intent(this, SearchActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
