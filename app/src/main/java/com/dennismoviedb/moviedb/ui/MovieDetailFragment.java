@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 public class MovieDetailFragment extends Fragment{
 @BindView(R.id.movieImageBackView)ImageView movieBack;
 @BindView(R.id.movieImageFrontView)ImageView movieFront;
-@BindView(R.id.movieNameTextView)TextView movieName;
+//@BindView(R.id.movieNameTextView)TextView movieName;
 @BindView(R.id.ratingTextView)TextView ratings;
 @BindView(R.id.genreTextView)TextView genre;
 @BindView(R.id.story)TextView movieStory;
@@ -59,8 +59,8 @@ public class MovieDetailFragment extends Fragment{
         Picasso.with(view.getContext()).load(mMovie.getMovie_poster()).into(movieFront);
 
         movieStory.setText(mMovie.getMovie_overview());
-        movieName.setText(mMovie.getMovie_title());
-        ratings.setText("" + mMovie.getMovie_vote());
+        //movieName.setText(mMovie.getMovie_title());
+        ratings.setText("IMdb: " + mMovie.getMovie_vote());
         if (mMovie.isAdult() != false){
             genre.setText("Adult");
         }else {

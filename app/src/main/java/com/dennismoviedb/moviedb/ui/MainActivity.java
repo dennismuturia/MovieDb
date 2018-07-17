@@ -2,14 +2,9 @@ package com.dennismoviedb.moviedb.ui;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import com.dennismoviedb.moviedb.R;
 import com.dennismoviedb.moviedb.adapters.MovieListAdapter;
@@ -95,30 +90,5 @@ public class MainActivity extends Activity{
             }
         });
     }
-    //For the menu
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.navigation, menu);
-        return true;
-    }
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.popularMOvies:
-                startActivity(new Intent(this, MainActivity.class));
-                return true;
-                /*
-            case R.id.newmovies:
-                startActivity(new Intent(this, NewMovies.class));
-                return true;
-            case R.id.tvshows:
-                startActivity(new Intent(this, TVShows.class));
-                return true;
-                */
-            case R.id.searchMovieandTV:
-                startActivity(new Intent(this, SearchActivity.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }
+

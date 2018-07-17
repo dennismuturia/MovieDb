@@ -20,7 +20,7 @@ import okhttp3.Response;
 public class MovieDBService {
     public static void popularMovies(okhttp3.Callback callback){
         //This okhttpclient is just used to build the urls to get the api's
-        Movie movie = new Movie();
+        Movie movie = new Movie();//This is for getting the page number
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
