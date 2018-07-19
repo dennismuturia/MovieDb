@@ -6,7 +6,7 @@ package com.dennismoviedb.moviedb;
 
 public class Constants {
     public static final String movieApi = BuildConfig.MovieAPI;
-    public static final String baseMovieURL = "https://api.themoviedb.org/3/movie/popular";
+    public static final String baseMovieURL = "https://api.themoviedb.org/3/movie";//Base url
     public static final String Api = "api_key";
     public static final String Pages = "page";
     public static final String searchQuery = "q";

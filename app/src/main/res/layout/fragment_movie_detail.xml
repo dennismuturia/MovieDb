@@ -32,9 +32,28 @@
                     android:layout_width="100dp"
                     android:layout_height="150dp"
                     android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="42dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="94dp"
                     android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/previewImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@android:drawable/ic_media_play" />
+
+                <Button
+                    android:id="@+id/ticketButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/movieImageBackView"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/watch_preview"
+                    tools:text="Buy Ticket">
+
+                </Button>
             </RelativeLayout>
 
             <RelativeLayout
@@ -46,14 +65,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="20dp">
 
-                <Button
-                    android:id="@+id/previewButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/watch_preview">
 
-                </Button>
                 <!--
                 <TextView
                     android:id="@+id/movieNameTextView"
@@ -80,11 +92,11 @@
 
                 <TextView
                     android:id="@+id/genreTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="42dp"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_below="@+id/movieNameTextView"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="0dp"
                     android:text="Adult"
                     android:textColor="@color/Blue"
                     android:textStyle="italic" />

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,6 +27,8 @@ public class MovieDetailFragment extends Fragment{
 @BindView(R.id.ratingTextView)TextView ratings;
 @BindView(R.id.genreTextView)TextView genre;
 @BindView(R.id.story)TextView movieStory;
+@BindView(R.id.previewImage)ImageView previewImage;
+@BindView(R.id.ticketButton)Button ticketButton;
 
 //Declare the new models class
     private Movie mMovie;
@@ -66,7 +69,12 @@ public class MovieDetailFragment extends Fragment{
         }else {
             genre.setText("Everyone");
         }
+        previewImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
 
         return view;
     }

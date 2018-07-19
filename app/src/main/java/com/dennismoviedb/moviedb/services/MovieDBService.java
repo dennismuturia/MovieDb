@@ -1,5 +1,7 @@
 package com.dennismoviedb.moviedb.services;
 
+import android.util.Log;
+
 import com.dennismoviedb.moviedb.Constants;
 import com.dennismoviedb.moviedb.model.NowShowingMovie;
 import com.dennismoviedb.moviedb.model.Movie;
@@ -26,11 +28,11 @@ public class MovieDBService {
 
         //Now lets build the site itself
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.baseMovieURL).newBuilder();
+        urlBuilder.addPathSegment("popular");
         urlBuilder.addQueryParameter(Constants.Api, Constants.movieApi);
-        urlBuilder.addQueryParameter(Constants.Pages, movie.getPageNumber());
         String url = urlBuilder.build().toString();
 
-        //Log.d("url",url);
+        Log.d("url",url);
 
         //This is the request section
         Request request = new Request.Builder()
@@ -60,9 +62,6 @@ public class MovieDBService {
                     String movie_backdropImage = imageUrl + theMoviesJson.getString("backdrop_path");
                     String movie_overview = theMoviesJson.getString("overview");
                     boolean adults = theMoviesJson.getBoolean("adult");
-
-
-
                     //Initiate the movie object
                     Movie movie = new Movie(movie_title, movie_poster,movie_vote,
                             movie_backdropImage,movie_overview, adults, pageNumber);
