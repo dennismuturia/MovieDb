@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/popularMOvies"
-        android:icon="@drawable/ic_cry_engine"
+
         android:title="Popular Movies"/>
 
     <item
         android:id="@+id/newmovies"
-        android:icon="@drawable/ic_eye"
+
         android:title="NewMovies"/>
 
     <item
         android:id="@+id/tvshows"
-        android:icon="@drawable/ic_cool"
+
         android:title="Tv Shows"/>
 </menu>

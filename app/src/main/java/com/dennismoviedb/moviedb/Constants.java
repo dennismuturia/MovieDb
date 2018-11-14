@@ -14,7 +14,7 @@ public class Constants {
     public static final String searchTVURL = "https://api.themoviedb.org/3/search/tv";
     public static final String baseTvURL = "https://api.themoviedb.org/3/tv/";
     public static final String nowShowingUrl = " https://api.themoviedb.org/3/movie/now_playing";
+    public static final String latestMovie = "https://api.themoviedb.org/3/movie/latest";
     public static final String youTubeUrl = "";
-    public static final String youtubeAPI = BuildConfig.YouTubeAPI;
     public static final String imageURL = "http://image.tmdb.org/t/p/w500/";
 }

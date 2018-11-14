@@ -3,7 +3,6 @@ package com.dennismoviedb.moviedb.services;
 import android.util.Log;
 
 import com.dennismoviedb.moviedb.Constants;
-import com.dennismoviedb.moviedb.model.NowShowingMovie;
 import com.dennismoviedb.moviedb.model.Movie;
 
 import org.json.JSONArray;
