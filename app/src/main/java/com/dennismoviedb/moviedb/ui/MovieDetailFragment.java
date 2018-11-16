@@ -23,7 +23,6 @@ import butterknife.ButterKnife;
 public class MovieDetailFragment extends Fragment{
 @BindView(R.id.movieImageBackView)ImageView movieBack;
 @BindView(R.id.movieImageFrontView)ImageView movieFront;
-//@BindView(R.id.movieNameTextView)TextView movieName;
 @BindView(R.id.ratingTextView)TextView ratings;
 @BindView(R.id.genreTextView)TextView genre;
 @BindView(R.id.story)TextView movieStory;

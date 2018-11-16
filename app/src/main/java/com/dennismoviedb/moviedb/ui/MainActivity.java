@@ -39,7 +39,7 @@ public class MainActivity extends Activity{
     private ActionBar toolbar;
     /*
     *We will be using this functionality later in the course
-    *  public ArrayList<LatestMovie> latestMovie = new ArrayList<>();
+    *  public ArrayList<DetailMovie> latestMovie = new ArrayList<>();
      */
     //This is where the main program runs
     @Override

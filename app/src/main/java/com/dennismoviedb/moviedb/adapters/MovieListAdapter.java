@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
  */
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieViewHolder> {
-    private ArrayList<Movie> mMovie = new ArrayList<>();
+    private ArrayList<Movie> mMovie;
     private Context mContext;
     private static final int MAX_HEIGHT = 400;
     private static final int MAX_WIDTH = 300;
@@ -80,6 +80,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             Intent intent = new Intent(mContext, MovieDetailActivity.class);
             intent.putExtra("position",itemPOsition);
             intent.putExtra("movies", Parcels.wrap(mMovie));
+            intent.putExtra("id", getItemId());
             mContext.startActivity(intent);
         }
     }

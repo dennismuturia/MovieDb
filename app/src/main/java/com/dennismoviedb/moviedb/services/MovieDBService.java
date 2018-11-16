@@ -55,6 +55,7 @@ public class MovieDBService {
                 JSONArray resultsJSON = movieJSON.getJSONArray("results");
                 for (int i = 0; i < resultsJSON.length(); i++){
                     JSONObject theMoviesJson = resultsJSON.getJSONObject(i);
+                    int id = theMoviesJson.getInt("id");
                     String movie_title = theMoviesJson.getString("title");
                     String movie_poster = imageUrl + theMoviesJson.getString("poster_path");
                     int movie_vote = theMoviesJson.getInt("vote_average");
@@ -63,7 +64,7 @@ public class MovieDBService {
                     boolean adults = theMoviesJson.getBoolean("adult");
                     //Initiate the movie object
                     Movie movie = new Movie(movie_title, movie_poster,movie_vote,
-                            movie_backdropImage,movie_overview, adults, pageNumber);
+                            movie_backdropImage,movie_overview, adults, pageNumber, id);
 
                     //Add them to the model
                     movies.add(movie);

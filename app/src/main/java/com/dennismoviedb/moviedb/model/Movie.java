@@ -15,11 +15,12 @@ public class Movie {
     private String movie_overview;
     private boolean adult;
     private String pageNumber;
+    private int id;
 
     public Movie(){}
 
     public Movie(String movie_title, String movie_poster, int movie_vote,
-                 String movie_backdropImage, String movie_overview, boolean adult, String pageNumber){
+                 String movie_backdropImage, String movie_overview, boolean adult, String pageNumber, int id){
         this.movie_title = movie_title;
         this.movie_poster = movie_poster;
         this.movie_vote = movie_vote;
@@ -27,6 +28,7 @@ public class Movie {
         this.movie_overview = movie_overview;
         this.adult = adult;
         this.pageNumber = pageNumber;
+        this.id = id;
     }
 
     public String getMovie_title() {
@@ -53,5 +55,9 @@ public class Movie {
 
     public String getPageNumber() {
         return pageNumber;
+    }
+
+    public int getId() {
+        return id;
     }
 }
