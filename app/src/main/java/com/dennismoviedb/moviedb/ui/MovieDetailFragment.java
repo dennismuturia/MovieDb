@@ -24,10 +24,9 @@ public class MovieDetailFragment extends Fragment{
 @BindView(R.id.movieImageBackView)ImageView movieBack;
 @BindView(R.id.movieImageFrontView)ImageView movieFront;
 @BindView(R.id.ratingTextView)TextView ratings;
-@BindView(R.id.genreTextView)TextView genre;
+//@BindView(R.id.genreTextView)TextView genre;
 @BindView(R.id.story)TextView movieStory;
-@BindView(R.id.previewImage)ImageView previewImage;
-@BindView(R.id.ticketButton)Button ticketButton;
+//@BindView(R.id.ticketButton)Button ticketButton;
 
 //Declare the new models class
     private Movie mMovie;
@@ -63,17 +62,14 @@ public class MovieDetailFragment extends Fragment{
         movieStory.setText(mMovie.getMovie_overview());
         //movieName.setText(mMovie.getMovie_title());
         ratings.setText("IMdb: " + mMovie.getMovie_vote());
+        /*
         if (mMovie.isAdult() != false){
             genre.setText("Adult");
         }else {
             genre.setText("Everyone");
         }
-        previewImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        */
 
-            }
-        });
 
         return view;
     }

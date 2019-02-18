@@ -17,4 +17,5 @@ public class Constants {
     //public static final String latestMovie = "https://api.themoviedb.org/3/movie/";
     public static final String youTubeUrl = "";
     public static final String imageURL = "http://image.tmdb.org/t/p/w500/";
+    public static final String genres = "https://api.themoviedb.org/3/genre/movie/list";
 }

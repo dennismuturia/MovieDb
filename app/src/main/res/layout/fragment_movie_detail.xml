@@ -6,7 +6,7 @@
     tools:context="com.dennismoviedb.moviedb.ui.MovieDetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -22,7 +22,7 @@
                 <ImageView
                     android:id="@+id/movieImageBackView"
                     android:layout_width="match_parent"
-                    android:layout_height="190dp"
+                    android:layout_height="250dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:scaleType="centerCrop" />
@@ -37,69 +37,6 @@
                     android:layout_marginTop="94dp"
                     android:scaleType="centerCrop" />
 
-                <ImageView
-                    android:id="@+id/previewImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:src="@android:drawable/ic_media_play" />
-
-                <Button
-                    android:id="@+id/ticketButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/movieImageBackView"
-                    android:layout_centerHorizontal="true"
-                    android:text="@string/watch_preview"
-                    tools:text="Buy Ticket">
-
-                </Button>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:paddingBottom="20dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="20dp">
-
-
-                <!--
-                <TextView
-                    android:id="@+id/movieNameTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="113dp"
-                    android:text="Movie Name"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
--->
-                <TextView
-                    android:id="@+id/ratingTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_below="@+id/movieNameTextView"
-                    android:text="4.5/5"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:id="@+id/genreTextView"
-                    android:layout_width="42dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="0dp"
-                    android:text="Adult"
-                    android:textColor="@color/Blue"
-                    android:textStyle="italic" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -118,25 +55,69 @@
                     android:paddingRight="30dp"
                     android:paddingTop="20dp">
 
+                    <!--Card view for explanation of the movie-->
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/card_view"
+                        android:layout_width="356dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#fff"
+                        card_view:cardCornerRadius="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:id="@+id/theOver"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp">
+
+                                <TextView
+                                    android:id="@+id/overview"
+                                    android:layout_width="221dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginStart="40dp"
+                                    android:layout_marginEnd="39dp"
+                                    android:text="Movie Overview"
+                                    android:textColor="#fff"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/theOver">
+
+                                <TextView
+                                    android:id="@+id/story"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:textColor="#fff"
+                                    android:textSize="14sp" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
                     <TextView
-                        android:id="@+id/overview"
+                        android:id="@+id/ratingTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Movie Overview"
-                        android:textColor="@color/navigationBarColor"
-                        android:textSize="15sp"
+                        android:layout_below="@+id/movieNameTextView"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="11dp"
+                        android:text="4.5/5"
+                        android:textColor="@color/colorAccent"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/story"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:textColor="@color/navigationBarColor"
-                        android:textSize="14sp" />
 
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
-    </RelativeLayout>
+    </ScrollView>
 </FrameLayout>

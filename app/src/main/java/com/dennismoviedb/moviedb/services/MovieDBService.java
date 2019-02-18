@@ -58,7 +58,7 @@ public class MovieDBService {
                     int id = theMoviesJson.getInt("id");
                     String movie_title = theMoviesJson.getString("title");
                     String movie_poster = imageUrl + theMoviesJson.getString("poster_path");
-                    int movie_vote = theMoviesJson.getInt("vote_average");
+                    double movie_vote = theMoviesJson.getDouble("vote_average");
                     String movie_backdropImage = imageUrl + theMoviesJson.getString("backdrop_path");
                     String movie_overview = theMoviesJson.getString("overview");
                     boolean adults = theMoviesJson.getBoolean("adult");
@@ -78,4 +78,5 @@ public class MovieDBService {
         }
         return movies;
     }
+
 }
