@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import com.dennismoviedb.moviedb.R;
 import com.dennismoviedb.moviedb.adapters.MovieListAdapter;
 import com.dennismoviedb.moviedb.model.Movie;
+import com.dennismoviedb.moviedb.services.Genres;
 import com.dennismoviedb.moviedb.services.MovieDBService;
 
 
@@ -89,6 +90,22 @@ public class MainActivity extends Activity{
                             mRecyclerView.hasFixedSize();
                         }
                     });
+                }
+            }
+        });
+    }
+    public void getGenres(){
+        final Genres myGenres = new Genres();
+        myGenres.getGenres(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if(response.isSuccessful()){
+                    //Need to store the list of genres in an arraylist
                 }
             }
         });

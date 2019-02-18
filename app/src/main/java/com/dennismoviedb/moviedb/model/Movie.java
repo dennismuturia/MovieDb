@@ -2,6 +2,8 @@ package com.dennismoviedb.moviedb.model;
 
 import org.parceler.Parcel;
 
+import java.util.ArrayList;
+
 /**
  * Created by dennis on 3/6/18.
  */
@@ -16,10 +18,11 @@ public class Movie {
     private boolean adult;
     private String pageNumber;
     private int id;
+    private ArrayList<Integer> theGenres;
 
 
     public Movie(String movie_title, String movie_poster, double movie_vote,
-                 String movie_backdropImage, String movie_overview, boolean adult, String pageNumber, int id){
+                 String movie_backdropImage, String movie_overview, boolean adult, String pageNumber, int id, ArrayList<Integer> theGenres){
         this.movie_title = movie_title;
         this.movie_poster = movie_poster;
         this.movie_vote = movie_vote;
@@ -28,6 +31,7 @@ public class Movie {
         this.adult = adult;
         this.pageNumber = pageNumber;
         this.id = id;
+        this.theGenres = theGenres;
     }
 
     public Movie(){}
@@ -60,5 +64,9 @@ public class Movie {
 
     public int getId() {
         return id;
+    }
+
+    public  ArrayList<Integer> getGenres() {
+        return theGenres;
     }
 }
