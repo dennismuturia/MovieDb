@@ -52,8 +52,11 @@ public class MainActivity extends Activity{
         ButterKnife.bind(this);
         getMovies();
 
+        /*
+        *Deal with the deprication of the Facebook application. Will update this soon
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
+        */
     }
     /*
     public void logSentFriendRequestEvent () {

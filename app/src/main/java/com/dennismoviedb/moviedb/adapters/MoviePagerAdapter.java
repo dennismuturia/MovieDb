@@ -18,10 +18,10 @@ public class MoviePagerAdapter extends FragmentPagerAdapter {
     private ArrayList<Movie>mMovie;
     private ArrayList<DetailMovie>detailMovies;
 
-    public MoviePagerAdapter(FragmentManager fm, ArrayList<Movie>movie, ArrayList<DetailMovie>dmovies) {
+    public MoviePagerAdapter(FragmentManager fm, ArrayList<Movie>movie) {
         super(fm);
         mMovie = movie;
-        detailMovies = dmovies;
+        //detailMovies = dmovies;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class MoviePagerAdapter extends FragmentPagerAdapter {
     }
     @Override
     public CharSequence getPageTitle(int position){
-        return  mMovie.get(position).getMovie_title();
+        return mMovie.get(position).getMovie_title();
     }
     public int getMovieID(int id){
         return mMovie.get(id).getId();

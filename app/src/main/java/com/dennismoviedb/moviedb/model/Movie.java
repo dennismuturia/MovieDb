@@ -17,7 +17,6 @@ public class Movie {
     private String pageNumber;
     private int id;
 
-    public Movie(){}
 
     public Movie(String movie_title, String movie_poster, int movie_vote,
                  String movie_backdropImage, String movie_overview, boolean adult, String pageNumber, int id){
@@ -30,6 +29,8 @@ public class Movie {
         this.pageNumber = pageNumber;
         this.id = id;
     }
+
+    public Movie(){}
 
     public String getMovie_title() {
         return movie_title;
@@ -47,7 +48,7 @@ public class Movie {
         return movie_backdropImage;
     }
 
-    public String getMovie_overview() {return movie_overview;}
+    public String getMovie_overview() { return movie_overview; }
 
     public boolean isAdult() {
         return adult;
