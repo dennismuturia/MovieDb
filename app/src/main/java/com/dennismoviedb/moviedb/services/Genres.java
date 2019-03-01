@@ -5,6 +5,10 @@ import android.util.Log;
 import com.dennismoviedb.moviedb.Constants;
 import com.dennismoviedb.moviedb.model.Genre;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -36,16 +40,32 @@ public class Genres {
     }
 
     //Now process the results
+    //This is just a bad implementation of the code. Avoid nesting for loops like this. It will result to the application being slow
     public ArrayList<Genre> processGenres(Response response){
         ArrayList<Genre> movies = new ArrayList<>();
         try {
             String jsonData = response.body().string();
             if (response.isSuccessful()){
+                JSONObject theObject = new JSONObject(jsonData);
+                JSONArray genreArray = theObject.getJSONArray("genres");
+                for (int i = 0; i < genreArray.length(); i++){
+                    JSONObject theMoviesJson = genreArray.getJSONObject(i);
+                    for (int j=0; j < theMoviesJson.length(); j++){
+                        int id = theMoviesJson.getInt("id");
+                        String name = theMoviesJson.getString("name");
+                        //Store the values gotten to the model
+                        Genre genre = new Genre(id, name);
+                        movies.add(genre);
+                    }
+                }
 
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        return movies;
     }
 
 }

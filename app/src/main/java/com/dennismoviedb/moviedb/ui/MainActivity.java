@@ -5,9 +5,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.dennismoviedb.moviedb.R;
 import com.dennismoviedb.moviedb.adapters.MovieListAdapter;
+import com.dennismoviedb.moviedb.model.Genre;
 import com.dennismoviedb.moviedb.model.Movie;
 import com.dennismoviedb.moviedb.services.Genres;
 import com.dennismoviedb.moviedb.services.MovieDBService;
@@ -36,6 +38,7 @@ public class MainActivity extends Activity{
     private  MovieListAdapter mAdapter;
     //This will be used get the data gathered from the arrayList
     public ArrayList<Movie> myMovies = new ArrayList<>();
+    public ArrayList<Genre>myGenresDetail = new ArrayList<>();
     private GridLayoutManager gridLayoutManager;
     private ActionBar toolbar;
     /*
@@ -52,6 +55,7 @@ public class MainActivity extends Activity{
         //Now lets call the method to get the movies
         ButterKnife.bind(this);
         getMovies();
+        getGenres();
 
         /*
         *Deal with the deprication of the Facebook application. Will update this soon
@@ -94,6 +98,7 @@ public class MainActivity extends Activity{
             }
         });
     }
+
     public void getGenres(){
         final Genres myGenres = new Genres();
         myGenres.getGenres(new Callback() {
@@ -105,10 +110,12 @@ public class MainActivity extends Activity{
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if(response.isSuccessful()){
-                    //Need to store the list of genres in an arraylist
+                    //Toast.makeText(MainActivity.this, "Loading Genres", Toast.LENGTH_SHORT).show();
+                    myGenresDetail = myGenres.processGenres(response);
                 }
             }
         });
     }
+
 }
 
