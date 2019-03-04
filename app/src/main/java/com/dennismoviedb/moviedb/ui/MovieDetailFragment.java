@@ -12,13 +12,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dennismoviedb.moviedb.R;
+import com.dennismoviedb.moviedb.model.Genre;
 import com.dennismoviedb.moviedb.model.Movie;
+import com.dennismoviedb.moviedb.services.Genres;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class MovieDetailFragment extends Fragment{
 @BindView(R.id.movieImageBackView)ImageView movieBack;
@@ -29,6 +37,7 @@ public class MovieDetailFragment extends Fragment{
 //@BindView(R.id.ticketButton)Button ticketButton;
 
 //Declare the new models class
+    public ArrayList<Genre> myGenresDetail = new ArrayList<>();
     private Movie mMovie;
 
     public static MovieDetailFragment newInstance(Movie movie){
@@ -46,6 +55,8 @@ public class MovieDetailFragment extends Fragment{
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         mMovie = Parcels.unwrap(getArguments().getParcelable("movie"));
+        //Initialize the genre here
+        getGenres();
     }
 
     @Override
@@ -72,6 +83,22 @@ public class MovieDetailFragment extends Fragment{
 
 
         return view;
+    }
+    public void getGenres(){
+        final Genres theGenres = new Genres();
+        theGenres.getGenres(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                //On a scenario of a failure of the response what to happen.
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if(response.isSuccessful()){
+                    myGenresDetail = theGenres.processGenres(response);
+                }
+            }
+        });
     }
 
 }

@@ -58,7 +58,7 @@ public class MainActivity extends Activity{
         getGenres();
 
         /*
-        *Deal with the deprication of the Facebook application. Will update this soon
+        *Deal with the Deprication of the Facebook application. Will update this soon
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         */
@@ -99,18 +99,18 @@ public class MainActivity extends Activity{
         });
     }
 
+    //Throw this to the fragment
     public void getGenres(){
         final Genres myGenres = new Genres();
         myGenres.getGenres(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-
+                //On a scenario of a failure of the response what to happen.
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if(response.isSuccessful()){
-                    //Toast.makeText(MainActivity.this, "Loading Genres", Toast.LENGTH_SHORT).show();
                     myGenresDetail = myGenres.processGenres(response);
                 }
             }
