@@ -96,6 +96,10 @@ public class MovieDetailFragment extends Fragment{
             public void onResponse(Call call, Response response) throws IOException {
                 if(response.isSuccessful()){
                     myGenresDetail = theGenres.processGenres(response);
+                    //Get the ids of the
+                    for (int i = 0; i < mMovie.getGenres().size(); i++){
+
+                    }
                 }
             }
         });
