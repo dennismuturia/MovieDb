@@ -53,6 +53,7 @@ public class MainActivity extends Activity{
         ButterKnife.bind(this);
         getMovies();
 
+
         /*
         *Deal with the deprication of the Facebook application. Will update this soon
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -90,22 +91,6 @@ public class MainActivity extends Activity{
                             mRecyclerView.hasFixedSize();
                         }
                     });
-                }
-            }
-        });
-    }
-    public void getGenres(){
-        final Genres myGenres = new Genres();
-        myGenres.getGenres(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if(response.isSuccessful()){
-                    //Need to store the list of genres in an arraylist
                 }
             }
         });
